@@ -1,0 +1,17 @@
+{
+  "id": "piku-2026",
+  "title": "Пікуй зимовий маршрут",
+  "shortDescription": "Зимовий похід на Пікуй через старі стежки.",
+  "fullDescription": "Дуже детальний опис походу...",
+  
+  "coverImage": "/assets/thumbs/piku.jpg",
+  "routeImage": "/assets/routes/piku.png",
+
+  "distanceKm": 28.5,
+  "durationDays": 2,
+  "region": "Карпати",
+
+  "sources": [
+    { "title": "Карта", "url": "https://..." }
+  ]
+}
