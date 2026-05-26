@@ -1,11 +1,13 @@
 let tripsData = [];
 
-fetch('./trips.json')
-  .then(res => res.json())
-  .then(data => {
-    tripsData = data;
-    renderTrips(data);
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('/trips.json')
+    .then(res => res.json())
+    .then(data => {
+      tripsData = data;
+      renderTrips(data);
+    });
+});
 
 function renderTrips(data) {
   const container = document.getElementById('trips');
