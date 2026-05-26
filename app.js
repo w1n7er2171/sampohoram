@@ -1,6 +1,6 @@
 let tripsData = [];
 
-fetch('./data/trips.json')
+fetch('./trips.json')
   .then(res => res.json())
   .then(data => {
     tripsData = data;
