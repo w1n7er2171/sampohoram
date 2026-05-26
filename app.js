@@ -30,8 +30,12 @@ function renderTrips(data) {
   });
 }
 
+const modal = document.getElementById('modal');
+const closeBtn = document.getElementById('close');
+
+/* OPEN */
 function openModal(trip) {
-  document.getElementById('modal').classList.remove('hidden');
+  modal.classList.add('show');
 
   document.getElementById('m-title').textContent = trip.title;
   document.getElementById('m-image').src = trip.coverImage;
@@ -39,9 +43,9 @@ function openModal(trip) {
   document.getElementById('m-route').src = trip.routeImage;
 
   document.getElementById('m-stats').innerHTML = `
-    <p>${trip.distanceKm} km</p>
-    <p>${trip.durationDays} днів</p>
-    <p>${trip.region}</p>
+    <span>${trip.region}</span>
+    <span>${trip.distanceKm} km</span>
+    <span>${trip.durationDays} днів</span>
   `;
 
   const sources = document.getElementById('m-sources');
@@ -54,12 +58,14 @@ function openModal(trip) {
   });
 }
 
-document.getElementById('close').onclick = () => {
-  document.getElementById('modal').classList.add('hidden');
-};
+/* CLOSE BUTTON */
+closeBtn.addEventListener('click', () => {
+  modal.classList.remove('show');
+});
 
-window.onclick = (e) => {
-  if (e.target.id === 'modal') {
-    document.getElementById('modal').classList.add('hidden');
+/* CLICK OUTSIDE MODAL */
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('show');
   }
-};
+});
